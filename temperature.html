@@ -225,123 +225,50 @@ button.addEventListener('click', function() {
         alert('Please Enter any Number First');
     }
     else{
-        if(fromselected == 'Kilogram')
+        if(fromselected == 'Celsius')
         {
-            if(toselected == 'Kilogram'){
+            if(toselected == 'Celsius'){
                 ans.innerText = `${number} ${fromselected}`;
             }
-            else if(toselected == 'Gram'){
-                answer = number * 1000;
-                ans.innerText = `${number} ${fromselected} = ${answer} ${toselected}`;
+            else if(toselected == 'Fahrenheit'){
+                answer = (number * (9/5)) + 32;
+                ans.innerText = `${number}\u00B0C = ${answer}\u00B0F`;
             }
-            else if(toselected == 'Miligram'){
-                answer = number * (1e+6);
-                ans.innerText = `${number} ${fromselected} = ${answer} ${toselected}`;
-            }
-            else if(toselected == 'Pound'){
-                answer = (number * 2.20462).toFixed(4);
-                ans.innerText = `${number} ${fromselected} = ${answer} ${toselected}`;
-            }
-            else if(toselected == 'Tonne'){
-                answer = number / 1000;
-                ans.innerText = `${number} ${fromselected} = ${answer} ${toselected}`;
+            else if(toselected == 'Kelvin'){
+                answer = parseFloat(number) + 273.15;
+                ans.innerText = `${number}\u00B0C = ${answer}\u00B0K`;
             }
         }
-        else if(fromselected == 'Gram')
+        else if(fromselected == 'Fahrenheit')
         {
-            if(toselected == 'Gram'){
+            if(toselected == 'Fahrenheit'){
                 ans.innerText = `${number} ${fromselected}`;
             }
-            else if(toselected == 'Kilogram'){
-                answer = number / 1000;
-                ans.innerText = `${number} ${fromselected} = ${answer} ${toselected}`;
+            else if(toselected == 'Celsius'){
+                answer = ((number - 32) * (5/9)).toFixed(2);
+                ans.innerText = `${number}\u00B0CF = ${answer}\u00B0C`;
             }
-            else if(toselected == 'Miligram'){
-                answer = number * 1000;
-                ans.innerText = `${number} ${fromselected} = ${answer} ${toselected}`;
-            }
-            else if(toselected == 'Pound'){
-                answer = (number / 453.6).toFixed(6);
-                ans.innerText = `${number} ${fromselected} = ${answer} ${toselected}`;
-            }
-            else if(toselected == 'Tonne'){
-                answer = (number / (1e+6)).toExponential(2);
-                ans.innerText = `${number} ${fromselected} = ${answer} ${toselected}`;
+            else if(toselected == 'Kelvin'){
+                answer = (((number - 32) * (5/9)) + 273.15).toFixed(2);
+                ans.innerText = `${number}\u00B0F = ${answer}\u00B0K`;
             }
         }
-        else if(fromselected == 'Miligram')
+        else if(fromselected == 'Kelvin')
         {
-            if(toselected == 'Miligram'){
+            if(toselected == 'Kelvin'){
                 ans.innerText = `${number} ${fromselected}`;
             }
-            else if(toselected == 'Kilogram'){
-                answer = number / (1e+6);
-                ans.innerText = `${number} ${fromselected} = ${answer} ${toselected}`;
+            else if(toselected == 'Celsius'){
+                answer = (parseFloat(number) - 273.15).toFixed(2);
+                ans.innerText = `${number}\u00B0K = ${answer}\u00B0C`;
             }
-            else if(toselected == 'Gram'){
-                answer = number / 1000;
-                ans.innerText = `${number} ${fromselected} = ${answer} ${toselected}`;
-            }
-            else if(toselected == 'Pound'){
-                answer = (number / 453600).toExponential(4);
-                ans.innerText = `${number} ${fromselected} = ${answer} ${toselected}`;
-            }
-            else if(toselected == 'Tonne'){
-                answer = (number / (1e+9)).toExponential(2);
-                ans.innerText = `${number} ${fromselected} = ${answer} ${toselected}`;
-            }
-        }
-        else if(fromselected == 'Pound')
-        {
-            if(toselected == 'Pound'){
-                ans.innerText = `${number} ${fromselected}`;
-            }
-            else if(toselected == 'Kilogram'){
-                answer = (number * 0.453592).toFixed(5);
-                ans.innerText = `${number} ${fromselected} = ${answer} ${toselected}`;
-            }
-            else if(toselected == 'Miligram'){
-                answer = number * 453592;
-                ans.innerText = `${number} ${fromselected} = ${answer} ${toselected}`;
-            }
-            else if(toselected == 'Gram'){
-                answer = (number * 453.592).toFixed(4);
-                ans.innerText = `${number} ${fromselected} = ${answer} ${toselected}`;
-            } 
-            else if(toselected == 'Tonne'){
-                answer = (number / 2204.62).toFixed(8);
-                ans.innerText = `${number} ${fromselected} = ${answer} ${toselected}`;
-            }
-        }
-        else if(fromselected == 'Tonne')
-        {
-            if(toselected == 'Tonne'){
-                ans.innerText = `${number} ${fromselected}`;
-            }
-            else if(toselected == 'Kilogram'){
-                answer = number * 1000;
-                ans.innerText = `${number} ${fromselected} = ${answer} ${toselected}`;
-            }
-            else if(toselected == 'Miligram'){
-                answer = number * (1e+9);
-                ans.innerText = `${number} ${fromselected} = ${answer} ${toselected}`;
-            }
-            else if(toselected == 'Gram'){
-                answer = number * (1e+6);
-                ans.innerText = `${number} ${fromselected} = ${answer} ${toselected}`;
-            } 
-            else if(toselected == 'Pound'){
-                answer = (number * 2204.62).toFixed(4);
-                ans.innerText = `${number} ${fromselected} = ${answer} ${toselected}`;
+            else if(toselected == 'Fahrenheit'){
+                answer = (((number - 273.15) * (9/5)) + 32).toFixed(2);
+                ans.innerText = `${number}\u00B0K = ${answer}\u00B0F`;
             }
         }
     }
 });
-
-reset.addEventListener('click', function(){
-    document.getElementById('input').value = '';
-    ans.innerText = ""
-})
     </script>
 </body>
 </html>
